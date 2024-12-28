@@ -4,16 +4,13 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 
 ![Banner Materi Web Backend](https://via.placeholder.com/1200x400?text=Materi+Web+Backend+2024)
 
-> **Catatan**: Pilih branch sesuai dengan pertemuan yang Anda butuhkan sebelum mengunduh materi.
+> **Catatan**: Pilih branch sesuai dengan pertemuan yang teman-teman butuhkan sebelum mengunduh materi.
 
 ---
 
 ## Hal yang Akan Dipelajari
 
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)  
-![MySQL](https://img.shields.io/badge/mysql-%234479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)  
-![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)  
-![Postman](https://img.shields.io/badge/postman-%23FF6C37.svg?style=for-the-badge&logo=postman&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%234479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![Postman](https://img.shields.io/badge/postman-%23FF6C37.svg?style=for-the-badge&logo=postman&logoColor=white)
 
 ---
 
@@ -24,13 +21,13 @@ Ikuti langkah-langkah berikut untuk mengunduh materi dari repository ini dalam f
 ##### 1. Pilih Branch yang Sesuai
 
 1. Klik menu **"Branch"** di halaman utama repository.
-2. Pilih branch yang sesuai dengan pertemuan yang Anda butuhkan (contoh: `pertemuan-1`, `pertemuan-2`, dll).
+2. Pilih branch yang sesuai dengan pertemuan yang dibutuhkan (contoh: `pertemuan-1`, `pertemuan-2`, dst).
 
 ![Langkah 1: Pilih Branch](./img/step-1.png)
 
 ##### 2. Cari Folder Materi
 
-Navigasikan ke folder atau file yang sesuai dengan materi yang ingin Anda unduh.
+Navigasikan ke folder atau file yang sesuai dengan materi yang ingin diunduh.
 
 ![Langkah 2: Cari Folder Materi](./img/step-2.png)
 
@@ -43,7 +40,7 @@ Navigasikan ke folder atau file yang sesuai dengan materi yang ingin Anda unduh.
 
 ##### 4. Ekstrak File ZIP
 
-Setelah unduhan selesai, ekstrak file ZIP di komputer Anda untuk mengakses semua file materi.
+Setelah unduhan selesai, ekstrak file ZIP di komputer teman-teman untuk mengakses semua file materi.
 
 ---
 
