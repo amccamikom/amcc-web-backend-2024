@@ -55,7 +55,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   **Windows**: `C:\laragon\www`
     -   **Linux/Mac**: (sesuaikan lokasi folder instalasi Laragon Anda).
 
-![Langkah 1: Ekstrak File ZIP](./img/step-1-extract.png)
+![Langkah 1: Ekstrak File ZIP](./img/run/step-1.png)
 
 ##### 2. Ubah Nama Folder Hasil Ekstrak
 
@@ -64,14 +64,14 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Dari: `amcc-web-backend-2024-pertemuan-1`
     -   Menjadi: `pertemuan-1`
 
-![Langkah 2: Ubah Nama Folder](./img/step-2-rename.png)
+![Langkah 2: Ubah Nama Folder](./img/run/step-2.png)
 
 ##### 3. Jalankan Laragon
 
 -   Buka aplikasi **Laragon**.
 -   Klik tombol **Start All** untuk mengaktifkan server.
 
-![Langkah 3: Jalankan Laragon](./img/step-3-laragon.png)
+![Langkah 3: Jalankan Laragon](./img/run/step-3.png)
 
 ##### 4. Akses Materi di Browser
 
@@ -84,14 +84,12 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
 
 -   **Catatan**: Ganti `pertemuan-1` dengan nama folder yang telah Anda buat sesuai materi yang diunduh.
 
-![Langkah 4: Akses Materi di Browser](./img/step-4-browser.png)
+![Langkah 4: Akses Materi di Browser](./img/run/step-4.png)
 
 ##### 5. Baca Dokumentasi di File `README.md`
 
 -   Setiap materi yang diunduh memiliki file `README.md`.
 -   File ini berisi dokumentasi atau panduan singkat mengenai isi repository tersebut, termasuk tujuan materi dan struktur file.
-
-![Langkah 5: Baca File README.md](./img/step-5-readme.png)
 
 ## 🗂️ Daftar Materi Berdasarkan Pertemuan
 
