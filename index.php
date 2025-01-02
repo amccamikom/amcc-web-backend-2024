@@ -51,20 +51,29 @@
             <ul id="projectList" class="divide-y divide-gray-700">
                 <?php
                 $dir = './';
-                $files = array_diff(scandir($dir), ['.', '..']);
-                foreach ($files as $file):
-                    if (is_dir($file)):
-                        $createdAt = date("F d, Y", filemtime($file));
-                        ?>
-                        <li class="py-4 project-item flex justify-between items-center">
-                            <a href="<?= $file ?>/"
-                                class="text-xl text-white font-medium hover:underline transition-all duration-200">
-                                <?= $file ?>
-                            </a>
-                            <span class="text-gray-400 text-sm"><?= $createdAt ?></span>
-                        </li>
-                        <?php
-                    endif;
+                $files = array_diff(scandir(directory: $dir), ['.', '..']);
+
+                // Filter hanya direktori
+                $directories = array_filter($files, function ($file) use ($dir) {
+                    return is_dir($dir . $file);
+                });
+
+                // Urutkan berdasarkan waktu modifikasi (terbaru di atas)
+                usort($directories, function ($a, $b) use ($dir) {
+                    return filemtime($dir . $b) <=> filemtime($dir . $a);
+                });
+
+                foreach ($directories as $file):
+                    $createdAt = date("F d, Y", filemtime($dir . $file));
+                ?>
+                    <li class="py-4 project-item flex justify-between items-center">
+                        <a href="<?= htmlspecialchars($file) ?>/"
+                            class="text-xl text-white font-medium hover:underline transition-all duration-200">
+                            <?= htmlspecialchars($file) ?>
+                        </a>
+                        <span class="text-gray-400 text-sm"><?= $createdAt ?></span>
+                    </li>
+                <?php
                 endforeach;
                 ?>
             </ul>
