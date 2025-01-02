@@ -2,17 +2,18 @@
 
 Selamat datang di repository **Materi Web Backend 2024**. Repository ini dirancang untuk membantu teman-teman untuk mengejar materi yang tertinggal atau meninjau ulang pembelajaran dari pertemuan sebelumnya. Semua file dan materi disusun berdasarkan pertemuan untuk mempermudah navigasi.
 
-![Banner Materi Web Backend](https://via.placeholder.com/1200x400?text=Materi+Web+Backend+2024)
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif">
+    <img alt="Himawari" src="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif" title="Oresuki Himawari" width="100%" />
+  </picture>
+</div>
 
 > **Catatan**: Pilih branch sesuai dengan pertemuan yang teman-teman butuhkan sebelum mengunduh materi.
-
----
 
 ## Hal yang Akan Dipelajari
 
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%234479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![Postman](https://img.shields.io/badge/postman-%23FF6C37.svg?style=for-the-badge&logo=postman&logoColor=white)
-
----
 
 ## 🚀 Cara Mengunduh Materi
 
@@ -42,8 +43,6 @@ Navigasikan ke folder atau file yang sesuai dengan materi yang ingin diunduh.
 
 Setelah unduhan selesai, ekstrak file ZIP di komputer teman-teman untuk mengakses semua file materi.
 
----
-
 ## 🗂️ Daftar Materi Berdasarkan Pertemuan
 
 #### **Pertemuan 1: Dasar PHP**
@@ -69,7 +68,7 @@ Setelah unduhan selesai, ekstrak file ZIP di komputer teman-teman untuk mengakse
     -   Perulangan (for, while, do while, foreach)
     -   Fungsi
     -   Variable handling (isset, empty, is_null, is_array, dll)
--   **Link Modul**: [Dasar PHP Lanjutan - Medium](#)
+-   **Link Modul**: [Dasar PHP Lanjutan - Medium](https://medium.com/amcc-amikom/dasar-dasar-php-lanjutan-9d402dcec102)
 
 #### **Pertemuan 3: Konsep OOP di PHP**
 
@@ -166,7 +165,5 @@ Setelah unduhan selesai, ekstrak file ZIP di komputer teman-teman untuk mengakse
     -   Membuat RESTful API lengkap
     -   Dokumentasi dan pengujian
 -   **Link Modul**: [Final Project - Medium](#)
-
----
 
 Semoga repository ini membantu dalam perjalanan belajar teman-teman semuanya! 🎉
