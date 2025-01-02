@@ -19,27 +19,27 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 
 Ikuti langkah-langkah berikut untuk mengunduh materi dari repository ini dalam format ZIP:
 
-##### 1. Pilih Branch yang Sesuai
+#### 1. Pilih Branch yang Sesuai
 
 1. Klik menu **"Branch"** di halaman utama repository.
 2. Pilih branch yang sesuai dengan pertemuan yang dibutuhkan (contoh: `pertemuan-1`, `pertemuan-2`, dst).
 
 ![Langkah 1: Pilih Branch](./img/download/step-1.png)
 
-##### 2. Cari Folder Materi
+#### 2. Cari Folder Materi
 
 Navigasikan ke folder atau file yang sesuai dengan materi yang ingin diunduh.
 
 ![Langkah 2: Cari Folder Materi](./img/download/step-2.png)
 
-##### 3. Unduh File ZIP
+#### 3. Unduh File ZIP
 
 1. Klik tombol **"Code"** di kanan atas repository.
 2. Pilih opsi **"Download ZIP"**.
 
 ![Langkah 3: Download ZIP](./img/download/step-3.png)
 
-##### 4. Ekstrak File ZIP
+#### 4. Ekstrak File ZIP
 
 Setelah unduhan selesai, ekstrak file ZIP di komputer teman-teman untuk mengakses semua file materi.
 
@@ -47,7 +47,7 @@ Setelah unduhan selesai, ekstrak file ZIP di komputer teman-teman untuk mengakse
 
 Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah berikut untuk menjalankan file di sistem lokal menggunakan **Laragon**:
 
-##### 1. Ekstrak File ZIP ke Folder `www` Laragon
+#### 1. Ekstrak File ZIP ke Folder `www` Laragon
 
 -   Setelah file ZIP berhasil diunduh, ekstrak file tersebut.
 -   Tempatkan hasil ekstrak di dalam folder `www` pada direktori Laragon di komputer Anda.
@@ -57,7 +57,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
 
 ![Langkah 1: Ekstrak File ZIP](./img/run/step-1.png)
 
-##### 2. Ubah Nama Folder Hasil Ekstrak
+#### 2. Ubah Nama Folder Hasil Ekstrak
 
 -   Untuk mempermudah akses di browser, ubah nama folder hasil ekstrak.
 -   **Contoh**:
@@ -66,14 +66,14 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
 
 ![Langkah 2: Ubah Nama Folder](./img/run/step-2.png)
 
-##### 3. Jalankan Laragon
+#### 3. Jalankan Laragon
 
 -   Buka aplikasi **Laragon**.
 -   Klik tombol **Start All** untuk mengaktifkan server.
 
 ![Langkah 3: Jalankan Laragon](./img/run/step-3.png)
 
-##### 4. Akses Materi di Browser
+#### 4. Akses Materi di Browser
 
 -   Buka browser favorit Anda (Google Chrome, Firefox, dll.).
 -   Ketikkan URL berikut di address bar:
@@ -86,10 +86,12 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
 
 ![Langkah 4: Akses Materi di Browser](./img/run/step-4.png)
 
-##### 5. Baca Dokumentasi di File `README.md`
+#### 5. Baca Dokumentasi di File `README.md`
 
 -   Setiap materi yang diunduh memiliki file `README.md`.
 -   File ini berisi dokumentasi atau panduan singkat mengenai isi repository tersebut, termasuk tujuan materi dan struktur file.
+
+![Langkah 5: Baca File README.md](./img/run/step-5.png)
 
 ## 🗂️ Daftar Materi Berdasarkan Pertemuan
 
