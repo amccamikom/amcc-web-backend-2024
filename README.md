@@ -50,10 +50,10 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
 #### 1. Ekstrak File ZIP ke Folder `www` Laragon
 
 -   Setelah file ZIP berhasil diunduh, ekstrak file tersebut.
--   Tempatkan hasil ekstrak di dalam folder `www` pada direktori Laragon di komputer Anda.
+-   Tempatkan hasil ekstrak di dalam folder `www` pada direktori Laragon di komputer teman-teman.
 -   Contoh lokasi folder:
     -   **Windows**: `C:\laragon\www`
-    -   **Linux/Mac**: (sesuaikan lokasi folder instalasi Laragon Anda).
+    -   **Linux/Mac**: (sesuaikan lokasi folder instalasi Laragon teman-teman).
 
 ![Langkah 1: Ekstrak File ZIP](./img/run/step-1.png)
 
@@ -75,14 +75,14 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
 
 #### 4. Akses Materi di Browser
 
--   Buka browser favorit Anda (Google Chrome, Firefox, dll.).
+-   Buka browser favorit teman-teman (Google Chrome, Firefox, dll.).
 -   Ketikkan URL berikut di address bar:
 
     ```plaintext
     http://localhost/pertemuan-1
     ```
 
--   **Catatan**: Ganti `pertemuan-1` dengan nama folder yang telah Anda buat sesuai materi yang diunduh.
+-   **Catatan**: Ganti `pertemuan-1` dengan nama folder yang telah teman-teman buat sesuai materi yang diunduh.
 
 ![Langkah 4: Akses Materi di Browser](./img/run/step-4.png)
 
