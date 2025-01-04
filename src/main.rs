@@ -1,9 +1,13 @@
+use chrono::Utc;
 use rocket::fairing::{Fairing, Info, Kind};
 use rocket::http::Header;
 use rocket::{get, routes, serde::json::Json};
 use rocket::{Request, Response};
+use std::net::SocketAddr;
+use std::time::Instant;
 
 pub struct CORS;
+mod helpers;
 
 #[rocket::async_trait]
 impl Fairing for CORS {
@@ -26,9 +30,22 @@ impl Fairing for CORS {
 }
 
 #[get("/")]
-fn index() -> Json<serde_json::Value> {
+fn index(client_ip: SocketAddr) -> Json<serde_json::Value> {
+    let start_time = Instant::now();
+
+    let timestamp = Utc::now().to_rfc3339();
+
+    let execution_time = start_time.elapsed().as_millis();
+
+    let hero_headline = "Turning Code into Web Apps";
+    let hero_subline = "From messy commits to polished products, we create the web";
+
     Json(serde_json::json!({
-        "message": "Hello, Backend Dev !!"
+        "headline": hero_headline,
+        "subline": hero_subline,
+        "timestamp": timestamp,
+        "execution_time": execution_time,
+        "your_ip": client_ip,
     }))
 }
 
@@ -46,11 +63,26 @@ async fn catch_all(path: PathBuf) -> Option<NamedFile> {
     }
 }
 
+#[get("/top")]
+async fn anime_top() -> Json<serde_json::Value> {
+    let url = "https://api.jikan.moe/v4/top/anime";
+
+    return helpers::api_helper::get_data(url).await;
+}
+
+#[get("/upcoming")]
+async fn anime_upcoming() -> Json<serde_json::Value> {
+    let url: &str = "https://api.jikan.moe/v4/seasons/upcoming";
+
+    return helpers::api_helper::get_data(url).await;
+}
+
 #[shuttle_runtime::main]
 async fn main() -> shuttle_rocket::ShuttleRocket {
     let rocket = rocket::build()
         .mount("/api", routes![index])
         .mount("/", routes![catch_all])
+        .mount("/anime", routes![anime_top, anime_upcoming])
         .attach(CORS);
 
     Ok(rocket.into())
