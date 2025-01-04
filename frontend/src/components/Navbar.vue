@@ -10,7 +10,8 @@
                     <div class="hidden md:block">
                         <nav>
                             <ul class="flex gap-4">
-                                <li><a class="text-gray-1000 hover:underline" target="_blank" href="https://ungu.in/discord-amcc">Discord</a>
+                                <li><a class="text-gray-1000 hover:underline" target="_blank"
+                                        href="https://ungu.in/discord-amcc">Discord</a>
                                 </li>
                                 <li><a target="_blank" class="text-gray-1000 hover:underline"
                                         href="https://github.com/amccamikom/amcc-web-backend-2024/">Github</a></li>
@@ -18,25 +19,23 @@
                         </nav>
                     </div>
                 </div>
-                <a href="ungu.in/discord-amcc">
+                <a href="https://ungu.in/discord-amcc">
                     <button :class="buttonStyle" class="hidden md:block">Join Now</button>
                 </a>
             </div>
         </div>
     </nav>
-
-
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { buttonStyle } from '../styles/styles';
-
-export default {
-    name: 'Navbar',
+export default defineComponent({
     data() {
         return {
             buttonStyle
         }
     }
-}
+});
+
 </script>
