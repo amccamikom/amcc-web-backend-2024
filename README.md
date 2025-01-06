@@ -1,28 +1,32 @@
-# 📝 Pertemuan 3: Konsep OOP di PHP
+# 📝 Pertemuan 5: Pengenalan Laravel
 
-Selamat datang di pertemuan ketiga! Di sesi ini, kita akan mulai memperkenalkan konsep **Object-Oriented Programming (OOP)** di PHP, yang merupakan paradigma penting untuk pengembangan perangkat lunak modern.
+Selamat datang di pertemuan kelima! Di sesi ini, kita akan memulai perjalanan dengan **Laravel**, framework PHP yang populer untuk membangun aplikasi web modern.
 
 ## 🎯 Tujuan Pertemuan
 
 Pada pertemuan ini, peserta diharapkan dapat:
 
--   Memahami konsep dasar OOP seperti class, object, dan method.
--   Mengenal istilah visibilitas dan penerapannya.
--   Mempelajari bagaimana menggunakan namespace di PHP.
+-   Memahami dasar penggunaan Composer untuk manajemen dependensi.
+-   Menginstal Laravel di lingkungan lokal.
+-   Mengenal konsep dasar Laravel, termasuk MVC dan API.
+-   Memahami struktur folder Laravel.
+-   Mengenal penggunaan command-line tool **PHP artisan**.
+-   Memahami routing dasar dan konfigurasi awal di Laravel.
 
 ## 📚 Materi yang Dibahas
 
-1. **Class dan Object**: Dasar dari OOP di PHP.
-2. **Property & Method**: Elemen penting dalam class.
-3. **Konstruktor**: Cara menginisialisasi object dengan nilai awal.
-4. **Namespace**: Mengorganisir kode menggunakan namespace dan keyword `use`.
-5. **Visibilitas**: Aturan aksesibilitas untuk property dan method.
+1. **Composer**: Alat untuk mengelola dependensi PHP.
+2. **Instalasi Laravel**: Langkah-langkah menginstal Laravel.
+3. **Pengenalan Laravel**: Konsep MVC (Model-View-Controller) dan API.
+4. **Struktur Folder Laravel**: Mengenal struktur folder dan file penting.
+5. **PHP Artisan**: Command-line tool bawaan Laravel.
+6. **Routing Dasar**: Membuat dan mengatur routing di Laravel.
 
 ## 📥 Link Modul
 
 Semua materi pertemuan ini tersedia dalam modul yang dapat teman-teman baca secara online:  
-[Konsep OOP di PHP - Medium](#)
+[Pengenalan Laravel - Medium](#)
 
 ## 🌟 Harapan Kami
 
-Kami berharap teman-teman dapat memahami materi yang telah disampaikan dengan baik. Selamat belajar dan mari terus berkembang menjadi backend developer yang teman-temanl! 🚀
+Kami berharap teman-teman dapat memahami dasar-dasar Laravel yang telah disampaikan. Selamat belajar dan semoga sukses dalam membangun aplikasi web yang hebat menggunakan Laravel! 🚀
