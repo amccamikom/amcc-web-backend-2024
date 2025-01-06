@@ -1,28 +1,34 @@
-# 📝 Pertemuan 3: Konsep OOP di PHP
+# 📝 Pertemuan 4: Database dan Migrasi
 
-Selamat datang di pertemuan ketiga! Di sesi ini, kita akan mulai memperkenalkan konsep **Object-Oriented Programming (OOP)** di PHP, yang merupakan paradigma penting untuk pengembangan perangkat lunak modern.
+Selamat datang di pertemuan keempat! Di sesi ini, kita akan mulai memperkenalkan dasar-dasar database dan migrasi, yang merupakan bagian penting dalam pengembangan aplikasi modern.
 
 ## 🎯 Tujuan Pertemuan
 
 Pada pertemuan ini, peserta diharapkan dapat:
 
--   Memahami konsep dasar OOP seperti class, object, dan method.
--   Mengenal istilah visibilitas dan penerapannya.
--   Mempelajari bagaimana menggunakan namespace di PHP.
+-   Memahami konsep dasar database relational dan non-relational.
+-   Mengenal MySQL dan PHPMyAdmin.
+-   Membuat database dan tabel menggunakan query dasar.
+-   Memahami konsep DDL (Data Definition Language) dan DML (Data Manipulation Language).
+-   Mengenal tipe data dalam MySQL serta memahami relasi seperti primary key dan foreign key.
+-   Mempelajari klausa SQL (WHERE, GROUP BY, ORDER BY, dll) dan operator SQL (perbandingan, logika, aritmatika, dll).
 
 ## 📚 Materi yang Dibahas
 
-1. **Class dan Object**: Dasar dari OOP di PHP.
-2. **Property & Method**: Elemen penting dalam class.
-3. **Konstruktor**: Cara menginisialisasi object dengan nilai awal.
-4. **Namespace**: Mengorganisir kode menggunakan namespace dan keyword `use`.
-5. **Visibilitas**: Aturan aksesibilitas untuk property dan method.
+1. **Pengenalan Database**: Relational dan Non-Relational.
+2. **Pengenalan MySQL dan PHPMyAdmin**: Tools untuk manajemen database.
+3. **Membuat Database dan Tabel**: Langkah awal untuk menyusun data.
+4. **Query Dasar**: DDL dan DML.
+5. **Tipe Data MySQL**: String, integer, date, dll.
+6. **Relationship**: Primary key, foreign key, dan hubungan antar tabel.
+7. **Klausa SQL**: WHERE, GROUP BY, ORDER BY, dll.
+8. **Operator SQL**: Operator perbandingan, logika, dan aritmatika.
 
 ## 📥 Link Modul
 
 Semua materi pertemuan ini tersedia dalam modul yang dapat teman-teman baca secara online:  
-[Konsep OOP di PHP - Medium](#)
+[Database dan Migrasi - Medium](#)
 
 ## 🌟 Harapan Kami
 
-Kami berharap teman-teman dapat memahami materi yang telah disampaikan dengan baik. Selamat belajar dan mari terus berkembang menjadi backend developer yang teman-temanl! 🚀
+Kami berharap teman-teman dapat memahami dasar-dasar database yang telah disampaikan. Selamat belajar dan semoga sukses membangun pondasi yang kokoh untuk pengembangan aplikasi! 🚀
