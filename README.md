@@ -5,7 +5,7 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif">
-    <img alt="Himawari" src="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif" title="Oresuki Himawari" width="100%" />
+    <img alt="Himawari" src="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif" title="Oresuki Himawari" width="100%"/>
   </picture>
 </div>
 
@@ -17,11 +17,12 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 
 ## 📖 Daftar Isi
 
--   [🚀 Cara Mengunduh Materi](#-cara-mengunduh-materi)
+-   [🛠️ Instalasi Tools](https://github.com/amccamikom/amcc-web-backend-2024/tree/first-meet?tab=readme-ov-file)
+-   [📚 Cara Mengunduh Materi](#-cara-mengunduh-materi)
 -   [🚀 Cara Menjalankan File](#-cara-menjalankan-file)
 -   [🗂️ Daftar Materi Berdasarkan Pertemuan](#%EF%B8%8F-daftar-materi-berdasarkan-pertemuan)
 
-## 🚀 Cara Mengunduh Materi
+## 📚 Cara Mengunduh Materi
 
 Ikuti langkah-langkah berikut untuk mengunduh materi dari repository ini dalam format ZIP:
 
