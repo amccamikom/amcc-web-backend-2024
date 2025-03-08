@@ -5,7 +5,7 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif">
-    <img alt="Himawari" src="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif" title="Oresuki Himawari" width="100%"/>
+    <img alt="Oresuki Himawari" src="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif" title="Oresuki Himawari" width="100%" loading="lazy"/>
   </picture>
 </div>
 
@@ -28,8 +28,8 @@ Ikuti langkah-langkah berikut untuk mengunduh materi dari repository ini dalam f
 
 #### 1. Pilih Branch yang Sesuai
 
-1. Klik menu **"Branch"** di halaman utama repository.
-2. Pilih branch yang sesuai dengan pertemuan yang dibutuhkan (contoh: `pertemuan-1`, `pertemuan-2`, dst).
+-   Klik menu **"Branch"** di halaman utama repository.
+-   Pilih branch yang sesuai dengan pertemuan yang dibutuhkan (contoh: `pertemuan-1`, `pertemuan-2`, dst).
 
 ![Langkah 1: Pilih Branch](./img/download/step-1.png)
 
@@ -41,8 +41,8 @@ Navigasikan ke folder atau file yang sesuai dengan materi yang ingin diunduh.
 
 #### 3. Unduh File ZIP
 
-1. Klik tombol **"Code"** di kanan atas repository.
-2. Pilih opsi **"Download ZIP"**.
+-   Klik tombol **"Code"** di kanan atas repository.
+-   Pilih opsi **"Download ZIP"**.
 
 ![Langkah 3: Download ZIP](./img/download/step-3.png)
 
@@ -136,7 +136,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Konstruktor
     -   Namespace dan `use` keyword
     -   Visibilitas
--   **Link Modul**: [Konsep OOP di PHP - Medium](#)
+-   **Link Modul**: [Konsep OOP di PHP - Medium](https://medium.com/amcc-amikom/pengenalan-object-oriented-programming-pada-bahasa-php-ef17fa7663ab)
 
 #### **Pertemuan 4: Database dan Migrasi**
 
