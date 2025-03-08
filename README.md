@@ -21,7 +21,7 @@ Pada pertemuan ini, peserta diharapkan dapat:
 ## 📥 Link Modul
 
 Semua materi pertemuan ini tersedia dalam modul yang dapat teman-teman baca secara online:  
-[Konsep OOP di PHP - Medium](#)
+[Konsep OOP di PHP - Medium](https://medium.com/amcc-amikom/pengenalan-object-oriented-programming-pada-bahasa-php-ef17fa7663ab)
 
 ## 🌟 Harapan Kami
 
