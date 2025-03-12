@@ -1,28 +1,27 @@
-# 📝 Pertemuan 3: Konsep OOP di PHP
+# 📷 Dokumentasi Pelatihan 1 - 12
 
-Selamat datang di pertemuan ketiga! Di sesi ini, kita akan mulai memperkenalkan konsep **Object-Oriented Programming (OOP)** di PHP, yang merupakan paradigma penting untuk pengembangan perangkat lunak modern.
+Selamat datang di repositori dokumentasi pelatihan! 🎉
 
-## 🎯 Tujuan Pertemuan
+Repositori ini berisi **kumpulan foto dan video dokumentasi** dari sesi pelatihan **1 hingga 12**. Dokumentasi ini bertujuan untuk merekam momen selama pelatihan berlangsung, baik dalam bentuk foto maupun video, agar dapat menjadi referensi dan kenangan bagi seluruh peserta.
 
-Pada pertemuan ini, peserta diharapkan dapat:
+## 📌 Isi Dokumentasi
 
--   Memahami konsep dasar OOP seperti class, object, dan method.
--   Mengenal istilah visibilitas dan penerapannya.
--   Mempelajari bagaimana menggunakan namespace di PHP.
+Setiap folder di dalam repositori ini berisi:
 
-## 📚 Materi yang Dibahas
+-   📸 **Foto-foto kegiatan** dari masing-masing sesi.
+-   🎥 **Video dokumentasi** yang merekam proses pembelajaran dan aktivitas peserta.
 
-1. **Class dan Object**: Dasar dari OOP di PHP.
-2. **Property & Method**: Elemen penting dalam class.
-3. **Konstruktor**: Cara menginisialisasi object dengan nilai awal.
-4. **Namespace**: Mengorganisir kode menggunakan namespace dan keyword `use`.
-5. **Visibilitas**: Aturan aksesibilitas untuk property dan method.
+## 🔍 Struktur Folder
 
-## 📥 Link Modul
+📂 `pelatihan-1` → Foto & video dari pelatihan sesi 1  
+📂 `pelatihan-2` → Foto & video dari pelatihan sesi 2  
+📂 `pelatihan-3` → Foto & video dari pelatihan sesi 3  
+⋮  
+📂 `pelatihan-12` → Foto & video dari pelatihan sesi 12
 
-Semua materi pertemuan ini tersedia dalam modul yang dapat teman-teman baca secara online:  
-[Konsep OOP di PHP - Medium](https://medium.com/amcc-amikom/pengenalan-object-oriented-programming-pada-bahasa-php-ef17fa7663ab)
+## 🎯 Tujuan Dokumentasi
 
-## 🌟 Harapan Kami
-
-Kami berharap teman-teman dapat memahami materi yang telah disampaikan dengan baik. Selamat belajar dan mari terus berkembang menjadi backend developer yang teman-temanl! 🚀
+Dokumentasi ini dibuat untuk:  
+✅ Menjadi arsip visual dari setiap sesi pelatihan.  
+✅ Memudahkan peserta dalam mengenang kembali sesi pelatihan.  
+✅ Digunakan untuk keperluan laporan atau publikasi kegiatan.
