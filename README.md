@@ -27,7 +27,7 @@ Pada pertemuan ini, peserta diharapkan dapat:
 ## 📥 Link Modul
 
 Semua materi pertemuan ini tersedia dalam modul yang dapat teman-teman baca secara online:  
-[Database dan Migrasi - Medium](#)
+[Database dan Migrasi - Medium](https://medium.com/amcc-amikom/mengenal-dasar-dasar-database-dengan-menggunakan-mysql-287fb1efa944)
 
 ## 🌟 Harapan Kami
 
