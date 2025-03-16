@@ -150,7 +150,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Relationship (Primary key, foreign key, dst.)
     -   Klausa SQL (where, group by, order by, dst.)
     -   Operator SQL (perbandingan, logika, aritmatika, dst.)
--   **Link Modul**: [Database dan Migrasi - Medium](#)
+-   **Link Modul**: [Database dan Migrasi - Medium](https://medium.com/amcc-amikom/mengenal-dasar-dasar-database-dengan-menggunakan-mysql-287fb1efa944)
 
 #### **Pertemuan 5: Pengenalan Laravel**
 
