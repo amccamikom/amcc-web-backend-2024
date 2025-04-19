@@ -25,7 +25,7 @@ Pada pertemuan ini, peserta diharapkan dapat:
 ## 📥 Link Modul
 
 Semua materi pertemuan ini tersedia dalam modul yang dapat teman-teman baca secara online:  
-[Pengenalan Laravel - Medium](#)
+[Pengenalan Laravel - Medium](https://medium.com/amcc-amikom/pengenalan-laravel-2341b50a60a0)
 
 ## 🌟 Harapan Kami
 
