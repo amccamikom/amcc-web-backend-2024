@@ -162,7 +162,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Struktur folder Laravel
     -   PHP artisan
     -   Routing dasar dan konfigurasi
--   **Link Modul**: [Pengenalan Laravel - Medium](#)
+-   **Link Modul**: [Pengenalan Laravel - Medium](https://medium.com/amcc-amikom/pengenalan-laravel-2341b50a60a0)
 
 #### **Pertemuan 6: RESTful API Dasar**
 
