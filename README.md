@@ -172,7 +172,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Resource Routes
     -   CRUD menggunakan API
     -   Testing API dengan Postman (tanpa coding test)
--   **Link Modul**: [RESTful API Dasar - Medium](#)
+-   **Link Modul**: [RESTful API Dasar - Medium](https://medium.com/amcc-amikom/ngulik-restful-api-dari-nol-sampai-crud-jalan-8a288c44a0cb)
 
 #### **Pertemuan 7: Controller dan Request**
 
