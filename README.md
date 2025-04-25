@@ -31,7 +31,7 @@ Pada pertemuan ini, peserta diharapkan dapat:
 ## 📥 Link Modul
 
 Materi lengkap tersedia di:
-[RESTful API Dasar - Medium](#)
+[RESTful API Dasar - Medium](https://medium.com/amcc-amikom/ngulik-restful-api-dari-nol-sampai-crud-jalan-8a288c44a0cb)
 
 ## 🌟 Harapan Kami
 
