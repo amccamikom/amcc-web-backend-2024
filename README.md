@@ -29,9 +29,10 @@ Panduan lengkap langkah demi langkah untuk menyiapkan dan menjalankan project **
 
 ### 📋 Prasyarat
 
--   Laragon (dengan Apache/Nginx & MySQL) terinstall
--   Composer terinstall di sistem
--   VS Code (atau editor favorit kamu)
+-   Laragon (Apache/Nginx & MySQL)
+-   PHP **8.1+**
+-   Composer **2.x**
+-   VS Code (atau editor favorit teman-teman)
 -   Pengetahuan dasar terminal/command line
 
 ### 🚀 Langkah-langkah Setup
@@ -44,15 +45,15 @@ Panduan lengkap langkah demi langkah untuk menyiapkan dan menjalankan project **
 #### 2. Buka Terminal Laragon
 
 -   Klik ikon **Terminal** di Laragon
--   Secara otomatis kamu berada di `C:/laragon/www`
+-   Secara otomatis teman-teman berada di `C:/laragon/www` atau di `D:/laragon/www`
 
-#### 3. Install Laravel 10
+#### 3. Dapatkan Kode Project
 
-```bash
-composer create-project "laravel/laravel:^10.0" api-rental-mobil
-```
-
--   Ganti `api-rental-mobil` sesuai keinginan nama project-mu
+-   Jika baru, install Laravel (Silahkan sesuaikan nama `api-rental-mobil`):
+    ```bash
+    composer create-project "laravel/laravel:^10.0" api-rental-mobil
+    ```
+-   Jika teman-teman ingin download file dari repo AMCC bisa ikuti langkah-langkah disini [Panduan Mendownload Hasil Praktikum](https://github.com/amccamikom/amcc-web-backend-2024/tree/master?tab=readme-ov-file)
 
 #### 4. Masuk ke Folder Project
 
@@ -66,9 +67,6 @@ cd api-rental-mobil
 code .
 ```
 
--   Atau download hasil praktikum ini dari repo jika butuh dengan bantuan petunjuk:
-    [Panduan Mendonwload Hasil Praktikum](https://github.com/amccamikom/amcc-web-backend-2024/tree/master?tab=readme-ov-file)
-
 #### 6. Siapkan Database
 
 1. Akses: `http://localhost/phpmyadmin`
@@ -76,7 +74,7 @@ code .
 
 #### 7. Import SQL Schema
 
-1. Di dalam project, temukan file `rental_mobil.sql`
+1. Di dalam project, temukan file `rental_mobil.sql` atau bisa download dari link berikut: [Download Database Rental Mobil](https://drive.google.com/file/d/1G01-tPpTB2HwgeXeGJWU-GYlY_oNjyjK/view?usp=sharing)
 2. Di phpMyAdmin, pilih database `rental_mobil` → tab **Import** → upload `.sql` → **Go**
 
 #### 8. Konfigurasi `.env`
@@ -90,7 +88,7 @@ code .
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=rental_mobil
+    DB_DATABASE=rental_mobil // sesuaikan dengan nama database teman-teman
     DB_USERNAME=root
     DB_PASSWORD=
     ```
@@ -121,29 +119,41 @@ Buka `app/Http/Controllers/CarController.php` dan ganti isinya:
 ```php
 <?php
 
+// Menentukan namespace dari controller ini
 namespace App\Http\Controllers;
 
+// Mengimpor class Request untuk menangani HTTP request
 use Illuminate\Http\Request;
+// Mengimpor facade DB untuk menjalankan query database secara langsung
 use Illuminate\Support\Facades\DB;
 
+// Mendefinisikan class controller bernama CarController
 class CarController extends Controller
 {
+    // Method statis untuk mengambil semua data dari tabel 'cars'
     public static function getAllCarRaw()
     {
+        // Menjalankan query SQL secara mentah (raw) untuk select semua data dari tabel 'cars'
         return DB::select('SELECT * FROM cars');
     }
 }
+
 ```
 
 #### 13. Tambahkan Route di `routes/api.php`
 
 ```php
+// Mengimpor CarController agar bisa digunakan di routing
 use App\Http\Controllers\CarController;
 
+// Route GET ke endpoint /cars akan memanggil method getAllCarRaw dari CarController
 Route::get('/cars', [CarController::class, 'getAllCarRaw']);
+
+// Route GET ke endpoint /halo akan mengembalikan string 'halo, Adib!'
 Route::get('/halo', function() {
     return 'halo, Adib!';
 });
+
 ```
 
 #### 14. Jalankan Server Laravel
