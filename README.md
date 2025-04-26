@@ -53,7 +53,7 @@ Panduan lengkap langkah demi langkah untuk menyiapkan dan menjalankan project **
     ```bash
     composer create-project "laravel/laravel:^10.0" api-rental-mobil
     ```
--   Jika teman-teman ingin download file dari repo AMCC bisa ikuti langkah-langkah disini [Panduan Mendownload Hasil Praktikum](https://github.com/amccamikom/amcc-web-backend-2024/tree/master?tab=readme-ov-file)
+-   Jika teman-teman ingin download file dari repo AMCC bisa ikuti langkah-langkah disini [Panduan Mendownload Hasil Praktikum](https://github.com/amccamikom/amcc-web-backend-2024/tree/master?tab=readme-ov-file#-cara-mengunduh-materi)
 
 #### 4. Masuk ke Folder Project
 
