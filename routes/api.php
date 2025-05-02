@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\ApiKeyMiddleware;
 use Illuminate\Support\Facades\Route;
 
