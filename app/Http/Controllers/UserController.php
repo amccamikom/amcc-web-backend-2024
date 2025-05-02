@@ -1,75 +1,66 @@
 <?php
+namespace App\Http\Controllers;
 
-namespace App\Http\Controllers\API;
-
-use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
-
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    // Function untuk memproses method GET -- Mendapatkan data semua users
-    public function index() {
-        // Mendapatkan data semua users 
-        $users = User::getAll();
-
-        // Memakai UserResource untuk memfilter output json
-        return UserResource::collection(collect($users));
+    public function index()
+    {
+        $users = DB::table('users')->get();
+        return response()->json($users);
     }
+    public function show($id)
+    {
+        $user = DB::table('users')->find($id);
+        if (! $user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
 
-    // Function untuk memproses method POST -- Membuat user baru
-    public function store(Request $request) {
-        // melakukan hashing password dengan bcrypt
-        $password = bcrypt($request->password);
-
-        // Membuat user baru
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
+        return response()->json($user);
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'         => 'required',
+            'email'        => 'required|email|unique:users',
+            'phone_number' => 'required',
+            'password'     => 'required',
+            'role'         => 'required|in:admin,customer',
+        ]);
+        $id = DB::table('users')->insertGetId([
+            'name'         => $request->name,
+            'email'        => $request->email,
             'phone_number' => $request->phone_number,
-            'role' => $request->role,
-            'password' => $password,
+            'password'     => bcrypt($request->password),
+            'role'         => $request->role,
         ]);
-
-        // output
-        return response()->json([
-            'status'  => true,
-            'message' => 'User created successfully',
-        ]);
+        return response()->json(['message' => 'User created', 'id' => $id], 201);
     }
+    public function update(Request $request, $id)
+    {
+        $user = DB::table('users')->find($id);
+        if (! $user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
 
-    // function untuk memproses method PATCH -- mengupdate beberapa data user
-    public function update(Request $request, $id) {
-        // memperjelas id menjadi userId
-        $userId = $id;
-
-        // Melakukan update user berdasarkan user id
-        User::updateById($userId, [
-            'name' => $request->name,
-            'phone_number' => $request->phone_number,
+        DB::table('users')->where('id', $id)->update([
+            'name'         => $request->name ?? $user->name,
+            'email'        => $request->email ?? $user->email,
+            'phone_number' => $request->phone_number ?? $user->phone_number,
+            'password'     => $request->password ? bcrypt($request->password) : $user->password,
+            'role'         => $request->role ?? $user->role,
         ]);
-
-        // output
-        return response()->json([
-            'status'  => true,
-            'message' => 'User updated successfully',
-        ]);
+        return response()->json(['message' => 'User updated']);
     }
+    public function destroy($id)
+    {
+        $deleted = DB::table('users')->where('id', $id)->delete();
+        if (! $deleted) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
 
-    // function untuk memproses method DELETE -- menghapus user berdasarkan user id
-    public function destroy($id) {
-        // memperjelas id menjadi userId
-        $userId = $id;
-
-        // menghapus user berdasarkan id
-        User::deleteById($userId);
-
-        // output
-        return response()->json([
-            'status'  => true,
-            'message' => 'User successfully deleted',
-        ]);
+        return response()->json(['message' => 'User deleted']);
     }
 }
