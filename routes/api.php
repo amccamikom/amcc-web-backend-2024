@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\CarController;
+use App\Http\Middleware\ApiKeyMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Definisi/Membuat route CRUD users dengan apiResource
-Route::apiResource('/users',UserController::class);
+Route::middleware(ApiKeyMiddleware::class)->group(function () {
+	Route::apiResource('/users', UserController::class);
+});
+
+
+Route::apiResource('/cars', CarController::class);
