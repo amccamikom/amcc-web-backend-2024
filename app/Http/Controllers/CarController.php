@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +11,7 @@ class CarController extends Controller
     {
         $cars = DB::table('cars')
             ->join('categories', 'cars.category_id', '=', 'categories.id')
-            ->select('cars.*', 'categories.name as category_name')
+            ->select('cars.*', 'categories.name as category')
             ->get();
         return response()->json($cars);
     }
@@ -18,7 +19,7 @@ class CarController extends Controller
     {
         $car = DB::table('cars')
             ->join('categories', 'cars.category_id', '=', 'categories.id')
-            ->select('cars.*', 'categories.name as category_name')
+            ->select('cars.*', 'categories.name as category')
             ->where('cars.id', $id)
             ->first();
         if (! $car) {
@@ -54,6 +55,8 @@ class CarController extends Controller
             'location'    => $request->location,
             'imageUrl'    => $request->imageUrl,
             'category_id' => $request->category_id,
+            'created_at'   => Carbon::now(),
+            'updated_at'   => Carbon::now(),
         ]);
         return response()->json(['message' => 'Car created', 'id' => $id], 201);
     }
@@ -64,21 +67,28 @@ class CarController extends Controller
             return response()->json(['message' => 'Car not found'], 404);
         }
 
-        DB::table('cars')->where('id', $id)->update([
-            'name'        => $request->name ?? $car->name,
-            'price'       => $request->price ?? $car->price,
-            'color'       => $request->color ?? $car->color,
-            'status'      => $request->status ?? $car->status,
-            'seat'        => $request->seat ?? $car->seat,
-            'cc'          => $request->cc ?? $car->cc,
-            'top_speed'   => $request->top_speed ?? $car->top_speed,
-            'description' => $request->description ?? $car->description,
-            'location'    => $request->location ?? $car->location,
-            'imageUrl'    => $request->imageUrl ?? $car->imageUrl,
-            'category_id' => $request->category_id ?? $car->category_id,
-        ]);
+        $data = $request->json()->all() ?: $request->all();
+
+        $updateData = [
+            'name'        => $data['name'] ?? $car->name,
+            'price'       => $data['price'] ?? $car->price,
+            'color'       => $data['color'] ?? $car->color,
+            'status'      => $data['status'] ?? $car->status,
+            'seat'        => $data['seat'] ?? $car->seat,
+            'cc'          => $data['cc'] ?? $car->cc,
+            'top_speed'   => $data['top_speed'] ?? $car->top_speed,
+            'description' => $data['description'] ?? $car->description,
+            'location'    => $data['location'] ?? $car->location,
+            'imageUrl'    => $data['imageUrl'] ?? $car->imageUrl,
+            'category_id' => $data['category_id'] ?? $car->category_id,
+            'updated_at'  => Carbon::now(),
+        ];
+
+        DB::table('cars')->where('id', $id)->update($updateData);
+
         return response()->json(['message' => 'Car updated']);
     }
+
     public function destroy($id)
     {
         $deleted = DB::table('cars')->where('id', $id)->delete();
