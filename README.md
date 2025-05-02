@@ -174,17 +174,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Testing API dengan Postman (tanpa coding test)
 -   **Link Modul**: [RESTful API Dasar - Medium](https://medium.com/amcc-amikom/ngulik-restful-api-dari-nol-sampai-crud-jalan-8a288c44a0cb)
 
-#### **Pertemuan 7: Controller dan Request**
-
--   **Topik**: Mengelola Request
--   **Materi**:
-    -   Membuat Controller dengan Artisan
-    -   Konfigurasi di Route
-    -   Mengambil input dari request
-    -   Validasi input
--   **Link Modul**: [Controller dan Request - Medium](#)
-
-#### **Pertemuan 8: Database di Laravel**
+#### **Pertemuan 7: Database di Laravel**
 
 -   **Topik**: Mengelola database dengan Laravel
 -   **Materi**:
@@ -196,6 +186,17 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Insert, select, update, delete
     -   Factory
 -   **Link Modul**: [Database di Laravel - Medium](#)
+
+#### **Pertemuan 8: Controller dan Request**
+
+-   **Topik**: Mengelola Request
+-   **Materi**:
+    -   Membuat Controller dengan Artisan
+    -   Konfigurasi di Route
+    -   Mengambil input dari request
+    -   Validasi input
+    -   Middleware
+-   **Link Modul**: [Controller dan Request - Medium](#)
 
 #### **Pertemuan 9: Eloquent ORM & Relationship**
 
