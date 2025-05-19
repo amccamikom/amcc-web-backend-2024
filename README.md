@@ -4,8 +4,8 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif">
-    <img alt="Oresuki Himawari" src="https://media1.tenor.com/m/u_JghTVUgcgAAAAC/oresuki-himawari.gif" title="Oresuki Himawari" width="100%" loading="lazy"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://media1.tenor.com/m/prtZlWqXstkAAAAd/gaming-vibes.gif">
+    <img alt="Coding Vibes" src="https://media1.tenor.com/m/prtZlWqXstkAAAAd/gaming-vibes.gif" title="Coding Vibes" width="70%" loading="lazy"/>
   </picture>
 </div>
 
