@@ -5,7 +5,7 @@ Selamat datang di repository **Materi Web Backend 2024**. Repository ini diranca
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://media1.tenor.com/m/prtZlWqXstkAAAAd/gaming-vibes.gif">
-    <img alt="Coding Vibes" src="https://media1.tenor.com/m/prtZlWqXstkAAAAd/gaming-vibes.gif" title="Coding Vibes" width="70%" loading="lazy"/>
+    <img alt="Coding Vibes" src="https://media1.tenor.com/m/prtZlWqXstkAAAAd/gaming-vibes.gif" title="Coding Vibes" width="50%" loading="lazy"/>
   </picture>
 </div>
 
@@ -185,7 +185,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Migrasi database (artisan, skema tabel, foreign key)
     -   Insert, select, update, delete
     -   Factory
--   **Link Modul**: [Database di Laravel - Medium](#)
+-   **Link Modul**: [Database di Laravel - Medium](https://medium.com/amcc-amikom/per-database-an-di-laravel-82b4e9e3c0e5)
 
 #### **Pertemuan 8: Controller dan Request**
 
@@ -196,7 +196,7 @@ Setelah mengunduh dan mengekstrak materi dari repository, ikuti langkah-langkah 
     -   Mengambil input dari request
     -   Validasi input
     -   Middleware
--   **Link Modul**: [Controller dan Request - Medium](#)
+-   **Link Modul**: [Controller dan Request - Medium](https://medium.com/amcc-amikom/mengelola-request-dengan-controller-dan-middleware-a52a30aafb94)
 
 #### **Pertemuan 9: Eloquent ORM & Relationship**
 
