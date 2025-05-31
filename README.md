@@ -44,7 +44,7 @@ Pada pertemuan ini, peserta diharapkan dapat:
 ## 📥 Link Modul
 
 Materi lengkap tersedia di:  
-[Database di Laravel - Medium](#)
+[Database di Laravel - Medium](https://medium.com/amcc-amikom/per-database-an-di-laravel-82b4e9e3c0e5)
 
 ## 🌟 Harapan Kami
 
