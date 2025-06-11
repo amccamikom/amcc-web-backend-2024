@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->foreignId('car_id')->constrained()->cascadeOnDelete();
             $table->unsignedInteger('duration_days');
             $table->date('booking_date');

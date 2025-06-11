@@ -31,7 +31,7 @@ class BookingController extends Controller
     {
         $validated = $request->validate([
             'user_phone' => 'sometimes|string|max:20',
-            'id' => 'required|integer|exists:bookings,id',
+            'id' => 'required|string|exists:bookings,id',
         ]);
 
         $userPhone = $validated['user_phone'] ?? null;
