@@ -1,61 +1,257 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Car Rental API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ini adalah repository untuk backend API Sistem Rental Mobil. Dibuat menggunakan **Laravel 12**, proyek ini menyediakan RESTful API untuk mengelola data mobil dan pesanan (booking) dari sisi server.
 
-## About Laravel
+## ✨ Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   Menampilkan daftar mobil populer yang tersedia.
+-   Membuat pesanan/booking mobil baru dengan ID unik (contoh: `MB-XXXXXXXXXX`).
+-   Melihat riwayat pesanan berdasarkan email user.
+-   Mengubah dan membatalkan pesanan.
+-   Update status ketersediaan mobil secara otomatis saat mobil dipesan atau pesanan dibatalkan.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Backend:** Laravel 12
+-   **Database:** MySQL
 
-## Learning Laravel
+## 🚀 Panduan Setup Awal
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokalmu.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prasyarat
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   PHP 8.2 atau lebih baru
+-   Composer
+-   Database MySQL
+-   Git
+-   Postman (Opsional)
 
-## Laravel Sponsors
+### Langkah-langkah Instalasi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1.  **Clone repository ini:**
+    ```bash
+    git clone https://github.com/amccamikom/amcc-web-backend-2024.git
+    cd amcc-web-backend-2024
+    git checkout branch create-booking-endpoint
+    ```
 
-### Premium Partners
+2.  **Install dependensi PHP via Composer:**
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3.  **Salin file environment:**
+    ```bash
+    cp .env.example .env
+    ```
 
-## Contributing
+4.  **Generate application key:**
+    ```bash
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5.  **Konfigurasi database:**
+    Buka file `.env` dan sesuaikan pengaturan database sesuai dengan konfigurasimu.
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=car_rental
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-## Code of Conduct
+6.  **Jalankan migrasi dan seeder:**
+    Perintah ini akan membuat semua tabel yang dibutuhkan dan mengisinya dengan data awal (dummy data) yang sudah kita siapkan.
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7.  **Jalankan server pengembangan:**
+    ```bash
+    php artisan serve
+    ```
+    Sekarang, API-mu sudah berjalan dan bisa diakses di `http://127.0.0.1:8000`.
 
-## Security Vulnerabilities
+## 📚 Dokumentasi API Endpoint
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Semua endpoint di bawah ini memiliki prefix `/api/v1`.
+**Base URL:** `http://127.0.0.1:8000/api/v1`
 
-## License
+### 🚗 Cars
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Get Popular Cars
+
+Mengambil daftar mobil populer yang tersedia untuk disewa (diurutkan berdasarkan rating tertinggi).
+
+-   **Method:** `GET`
+-   **Endpoint:** `/cars/popular`
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "Popular cars retrieved successfully",
+        "data": [
+            {
+                "id": 1,
+                "name": "Toyota Avanza G",
+                "color": "Silver",
+                "price": 350000,
+                "speed": 200,
+                "seats": 7,
+                "location": "Jakarta",
+                "rating": 4.8,
+                "is_available": true,
+                "created_at": "2025-06-11T17:00:00.000000Z",
+                "updated_at": "2025-06-11T17:00:00.000000Z"
+            }
+        ]
+    }
+    ```
+
+### 🧾 Bookings
+
+#### Get User Booking
+
+Mengambil data booking berdasarkan ID booking dan (opsional) nomor telepon user.
+
+-   **Method:** `POST`
+-   **Endpoint:** `/bookings/user`
+-   **Request Body:**
+    ```json
+    {
+        "id": "MBX1Y2Z3A4",
+        "user_phone": "081234567890" // opsional
+    }
+    ```
+    -   `id` wajib, `user_phone` opsional.
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "User booking retrieved successfully",
+        "data": {
+            "id": "MBX1Y2Z3A4",
+            "car_id": 5,
+            "duration_days": 3,
+            "booking_date": "2025-06-10",
+            "user_name": "Salman",
+            "user_email": "salman@example.com",
+            "user_phone": "081234567890",
+            "created_at": "2025-06-11T17:00:00.000000Z",
+            "updated_at": "2025-06-11T17:00:00.000000Z",
+            "car": {
+                "id": 5,
+                "name": "Toyota Avanza G",
+                // ...data mobil lainnya...
+            }
+        }
+    }
+    ```
+-   **Response Gagal (404):**
+    ```json
+    {
+        "message": "Booking not found"
+    }
+    ```
+
+#### Create New Booking
+
+Membuat pesanan mobil baru.
+
+-   **Method:** `POST`
+-   **Endpoint:** `/bookings`
+-   **Request Body:**
+    ```json
+    {
+        "car_id": 1,
+        "duration_days": 3,
+        "booking_date": "2025-06-15",
+        "user_name": "Asep Bensin",
+        "user_email": "asep.bensin@example.com",
+        "user_phone": "081234567890"
+    }
+    ```
+-   **Response Sukses (201):**
+    ```json
+    {
+        "message": "Booking created successfully",
+        "data": {
+            "id": "MBK9L8J7H6",
+            "car_id": 1,
+            "duration_days": 3,
+            "booking_date": "2025-06-15",
+            "user_name": "Asep Bensin",
+            "user_email": "asep.bensin@example.com",
+            "user_phone": "081234567890",
+            "created_at": "2025-06-11T17:00:00.000000Z",
+            "updated_at": "2025-06-11T17:00:00.000000Z"
+        }
+    }
+    ```
+-   **Response Gagal (400):**
+    ```json
+    {
+        "message": "Car is not available for booking"
+    }
+    ```
+
+#### Update Booking
+
+Mengubah detail pesanan yang sudah ada. Semua field opsional.
+
+-   **Method:** `PUT`
+-   **Endpoint:** `/bookings/{id}`
+-   **URL Parameter:**
+    -   `{id}`: ID unik dari booking (contoh: `MBX1Y2Z3A4`).
+-   **Request Body:**
+    ```json
+    {
+        "duration_days": 5,
+        "booking_date": "2025-06-16"
+        // field lain opsional: car_id, user_name, user_email, user_phone
+    }
+    ```
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "Booking updated successfully",
+        "data": {
+            "id": "MBX1Y2Z3A4",
+            "car_id": 5,
+            "duration_days": 5,
+            "booking_date": "2025-06-16",
+            "user_name": "Salman",
+            "user_email": "salman@example.com",
+            "user_phone": "081234567890",
+            "created_at": "2025-06-11T17:00:00.000000Z",
+            "updated_at": "2025-06-11T17:01:00.000000Z"
+        }
+    }
+    ```
+-   **Response Gagal (404):**
+    ```json
+    {
+        "message": "Booking not found"
+    }
+    ```
+
+#### Delete / Cancel Booking
+
+Menghapus data pesanan. Status mobil terkait akan otomatis menjadi available.
+
+-   **Method:** `DELETE`
+-   **Endpoint:** `/bookings/{id}`
+-   **URL Parameter:**
+    -   `{id}`: ID unik dari booking (contoh: `MBX1Y2Z3A4`).
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "Booking deleted successfully"
+    }
+    ```
+-   **Response Gagal (404):**
+    ```json
+    {
+        "message": "Booking not found"
+    }
+    ```
