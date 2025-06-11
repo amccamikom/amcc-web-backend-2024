@@ -21,7 +21,7 @@ class BookingFactory extends Factory
             'duration_days' => $this->faker->numberBetween(1, 7),
             'booking_date' => $this->faker->dateTimeBetween('-1 month', '+1 week'),
             'user_name' => $this->faker->name(),
-            'user_email' => $this->faker->unique()->safeEmail(),
+            'user_email' => fn(array $attributes) => $attributes['user_name'] . '@gmail.com',
             'user_phone' => '08' . $this->faker->numerify('##########'),
         ];
     }

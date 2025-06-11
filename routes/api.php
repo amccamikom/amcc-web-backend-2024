@@ -8,7 +8,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/cars/popular', [BookingController::class, 'getPopularCars']);
 
     Route::prefix('bookings')->group(function () {
-        Route::get('/', [BookingController::class, 'getUserBookings']);
+        Route::post('/user', [BookingController::class, 'getUserBookings']);
         Route::post('/', [BookingController::class, 'store']);
         Route::put('/{id}', [BookingController::class, 'update']);
         Route::delete('/{id}', [BookingController::class, 'destroy']);

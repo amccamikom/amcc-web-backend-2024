@@ -107,6 +107,7 @@ class BookingController extends Controller
         }
 
         $booking->update($validated);
+        $booking->refresh();
 
         return response()->json([
             'message' => 'Booking updated successfully',
