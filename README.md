@@ -33,7 +33,7 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokalm
     ```bash
     git clone https://github.com/amccamikom/amcc-web-backend-2024.git
     cd amcc-web-backend-2024
-    git checkout branch create-booking-endpoint
+    git checkout create-booking-endpoint
     ```
 
 2.  **Install dependensi PHP via Composer:**
