@@ -1,51 +1,47 @@
-# 📝 Pertemuan 7: Database di Laravel 10
+# 📝 Pertemuan 8: Controller & Request di Laravel 10
 
-Selamat datang di pertemuan ketujuh! Di sesi ini kita akan mendalami manajemen **database** di Laravel 10. Kali ini teman-teman akan belajar mulai dari konfigurasi hingga generate data dummy yang siap dipakai.
+Selamat datang di pertemuan kedelapan! Kali ini kita bakal jadi sutradara aplikasi: bikin **Controller**, ngatur **Route**, nangkep input user, validasi, sampai pasang **Middleware**.
 
 ## 🎯 Tujuan Pertemuan
 
 Pada pertemuan ini, peserta diharapkan dapat:
 
-- Memahami cara konfigurasi koneksi database di file `.env` pada Laravel 10.  
-- Melakukan rollback, refresh migrasi, dan membuat skema tabel dengan foreign key.  
-- Membuat dan menjalankan **seeder** serta **factory** untuk generate data dummy.  
-- Mengambil data menggunakan query builder dan Eloquent (`where()`, dsb.).  
-- Mengimplementasikan operasi CRUD (insert, select, update, delete) pada database.  
+- Membuat controller menggunakan Artisan di Laravel 10.  
+- Mengonfigurasi route untuk controller (single‑action & resource).  
+- Mengambil dan memproses input dari `Request` object.  
+- Menerapkan validasi input, baik di controller maupun Form Request.  
+- Membuat dan menggunakan middleware untuk proteksi route.  
 
 ## 📚 Materi yang Dibahas
 
-1. **Konfigurasi Database**  
-   - Pengaturan di `.env` (DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)  
-   - Struktur `config/database.php` di Laravel 10  
+1. **Membuat Controller**  
+   - `php artisan make:controller NamaController`  
+   - Resource controller (`--resource`) vs single‑action controller  
 
-2. **Migrasi**  
-   - Artisan commands:  
-     - `php artisan migrate`  
-     - `php artisan migrate:rollback`  
-     - `php artisan migrate:refresh`  
-   - Definisi kolom, indeks, dan foreign key pada schema builder  
+2. **Routing**  
+   - Route dasar: `Route::get()`, `Route::post()`, `Route::put()`, `Route::delete()`  
+   - Resource route: `Route::resource('posts', PostController::class)`  
+   - Route grouping dan prefix  
 
-3. **Seeder & Factory**  
-   - Membuat seeder: `php artisan make:seeder NamaSeeder`  
-   - Mendaftarkan seeder di `DatabaseSeeder`  
-   - Membuat factory: `php artisan make:factory NamaFactory --model=Model`  
-   - Men‑generate data dummy: `Model::factory()->count(10)->create()`  
+3. **Request Input**  
+   - Dependency injection: `public function store(Request $request)`  
+   - Mengakses data: `$request->input('field')`, `$request->all()`, `$request->only([...])`  
 
-4. **Fetching Data**  
-   - Query Builder: `DB::table('users')->where('status', 'active')->get()`  
-   - Eloquent: `User::where('status', 'active')->first()`  
+4. **Validasi**  
+   - `$request->validate([...])` di controller  
+   - Membuat Form Request: `php artisan make:request StorePostRequest`  
+   - Aturan built‑in (required, email, max, etc.) dan custom messages  
 
-5. **CRUD Dasar**  
-   - **Insert**: `Model::create([...])`, `DB::table()->insert([...])`  
-   - **Select**: `Model::all()`, `Model::find($id)`, `where()`  
-   - **Update**: `$model->update([...])`, `DB::table()->where()->update([...])`  
-   - **Delete**: `$model->delete()`, `DB::table()->where()->delete()`  
+5. **Middleware**  
+   - Membuat: `php artisan make:middleware CheckRole`  
+   - Mendaftarkan di `app/Http/Kernel.php`  
+   - Menerapkan pada route atau controller  
 
 ## 📥 Link Modul
 
 Materi lengkap tersedia di:  
-[Database di Laravel - Medium](https://medium.com/amcc-amikom/per-database-an-di-laravel-82b4e9e3c0e5)
+[Controller dan Request - Medium](https://medium.com/amcc-amikom/mengelola-request-dengan-controller-dan-middleware-a52a30aafb94)
 
 ## 🌟 Harapan Kami
 
-Setelah menguasai pertemuan ini, teman-teman akan memiliki fondasi kuat dalam mengelola struktur database di Laravel 10. Dari setup koneksi sampai generate data dummy, semuanya dirancang agar aplikasimu scalable dan minim bug. Semoga teman-teman semakin percaya diri memanipulasi data dan siap membangun fitur‑fitur kompleks di sesi selanjutnya. Happy coding! 🚀
+Di sesi ini, kamu akan paham alur lengkap request dari user hingga diproses di controller, serta mahir menjagai validitas data lewat Form Request dan middleware. Dengan bekal ini, setiap endpoint yang kamu bangun akan lebih aman, terstruktur, dan mudah dipelihara. Terus eksplorasi pattern dan best practice Laravel 10, karena kontrol logika yang rapi adalah kunci aplikasi profesional. Semangat ngoding! 🚀
