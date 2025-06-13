@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car API Rental</title>
+    <title>Car Rental API</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -78,7 +78,7 @@
             <!-- Main content -->
             <div class="text-center py-2">
                 <h1 class="text-5xl font-bold text-teal-700 tracking-tight mb-3">
-                    Car API Rental
+                    Car Rental API
                 </h1>
                 <div class="h-1 w-24 bg-gradient-to-r from-teal-400 to-teal-600 mx-auto my-6 rounded-full"></div>
                 <p class="text-teal-600 text-lg font-light tracking-wide">
@@ -96,7 +96,7 @@
                     <a href="https://github.com/amccamikom/amcc-web-backend-2024/tree/car-rental-api"
                         class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-full shadow-lg font-semibold hover:from-teal-600 hover:to-teal-700 transition-all duration-200 transform hover:-translate-y-1"
                         target="_blank">
-                        Baca Dokumentasi
+                        Read the Docs
                     </a>
                 </div>
             </div>
