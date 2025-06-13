@@ -9,5 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = [
+        'name',
+    ];
+
+
+   // satu kategori -> punya banyak mobil (hasMany)
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
 }
