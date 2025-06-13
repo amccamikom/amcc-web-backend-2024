@@ -1,47 +1,33 @@
-# 📝 Pertemuan 8: Controller & Request di Laravel 10
+# 📝 Pertemuan 9: Refactor ke Eloquent - Bikin Kode Jadi Elegan
 
-Selamat datang di pertemuan kedelapan! Kali ini kita bakal jadi sutradara aplikasi: bikin **Controller**, ngatur **Route**, nangkep input user, validasi, sampai pasang **Middleware**.
+welkom bek! Setelah sebelumnya kita mahir mengelola `Controller` dan `Request`, sekarang waktunya kita 'merenovasi' fondasi aplikasi kita. Kita akan beralih dari **Query Builder** yang manual ke **Eloquent ORM** yang lebih elegann. Sesi ini kita fokus pada *refactoring*: mengubah kode yang sudah ada menjadi lebih bersih, lebih aman, dan lebih profesional.
 
 ## 🎯 Tujuan Pertemuan
 
 Pada pertemuan ini, peserta diharapkan dapat:
 
-- Membuat controller menggunakan Artisan di Laravel 10.  
-- Mengonfigurasi route untuk controller (single‑action & resource).  
-- Mengambil dan memproses input dari `Request` object.  
-- Menerapkan validasi input, baik di controller maupun Form Request.  
-- Membuat dan menggunakan middleware untuk proteksi route.  
+- Memahami perbedaan fundamental antara Query Builder dan Eloquent ORM.
+- Mampu mengonfigurasi **Model** dengan properti `$fillable` dan mendefinisikan **relasi**.
+- Melakukan **refactoring** kode dari Query Builder ke Eloquent untuk semua operasi CRUD.
+- Menerapkan *best practice* seperti *Eager Loading* (`with()`) untuk optimasi performa.
 
 ## 📚 Materi yang Dibahas
 
-1. **Membuat Controller**  
-   - `php artisan make:controller NamaController`  
-   - Resource controller (`--resource`) vs single‑action controller  
+1.  **Konfigurasi Model:** Keamanan dengan `$fillable` dan pembersihan logika query.
+2.  **Definisi Relasi:** Memetakan skema DB ke method Eloquent (`hasMany`, `belongsTo`).
+3.  **Refactoring Controller:** Mengganti `DB::table()` dengan method Eloquent yang modern.
+4.  **Best Practice:** *Eager Loading* dan *error handling* dengan `findOrFail()`.
 
-2. **Routing**  
-   - Route dasar: `Route::get()`, `Route::post()`, `Route::put()`, `Route::delete()`  
-   - Resource route: `Route::resource('posts', PostController::class)`  
-   - Route grouping dan prefix  
+## 💻 Tugas Praktikum
 
-3. **Request Input**  
-   - Dependency injection: `public function store(Request $request)`  
-   - Mengakses data: `$request->input('field')`, `$request->all()`, `$request->only([...])`  
-
-4. **Validasi**  
-   - `$request->validate([...])` di controller  
-   - Membuat Form Request: `php artisan make:request StorePostRequest`  
-   - Aturan built‑in (required, email, max, etc.) dan custom messages  
-
-5. **Middleware**  
-   - Membuat: `php artisan make:middleware CheckRole`  
-   - Mendaftarkan di `app/Http/Kernel.php`  
-   - Menerapkan pada route atau controller  
+1.  **Konfigurasi Model:** Isi properti `$fillable` di semua model (`User`, `Car`, dll.) dan hapus logika Query Builder dari `User.php`.
+2.  **Definisi Relasi:** Buat semua method relasi (`hasMany`, `belongsTo`, `hasOne`) di dalam setiap model sesuai skema.
+3.  **Refactor Controller:** Ganti semua query `DB::table()` di `UserController`, `CarController`, `BookingController`, dan `TransactionController` dengan method Eloquent.
+4.  **Testing:** Pastikan semua endpoint API berfungsi normal kembali menggunakan Postman.
 
 ## 📥 Link Modul
-
-Materi lengkap tersedia di:  
-[Controller dan Request - Medium](https://medium.com/amcc-amikom/mengelola-request-dengan-controller-dan-middleware-a52a30aafb94)
+[Pertemuan 8 Eloquent ORM & Relationship ](https://medium.com/amcc-amikom/web-programming/home)
 
 ## 🌟 Harapan Kami
 
-Di sesi ini, kamu akan paham alur lengkap request dari user hingga diproses di controller, serta mahir menjagai validitas data lewat Form Request dan middleware. Dengan bekal ini, setiap endpoint yang kamu bangun akan lebih aman, terstruktur, dan mudah dipelihara. Terus eksplorasi pattern dan best practice Laravel 10, karena kontrol logika yang rapi adalah kunci aplikasi profesional. Semangat ngoding! 🚀
+Di akhir sesi ini, kamu akan melihat bukti nyata bahwa 'progress' bukan hanya tentang menambah fitur, tapi juga tentang meningkatkan kualitas kode. Kemampuan untuk melakukan refactoring secara efektif adalah tanda seorang developer yang matang. Kode yang bersih akan membuat hidupmu lebih mudah di masa depan. Semangat bersih-bersih kode! 💻✨
