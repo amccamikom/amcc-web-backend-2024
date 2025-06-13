@@ -109,6 +109,46 @@ Mengambil daftar mobil populer yang tersedia untuk disewa (diurutkan berdasarkan
     }
     ```
 
+#### Search Cars by Location
+
+Mencari mobil yang tersedia berdasarkan lokasi.
+
+-   **Method:** `POST`
+-   **Endpoint:** `/cars/search`
+-   **Request Body:**
+    ```json
+    {
+        "location": "Jakarta"
+    }
+    ```
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "Cars retrieved successfully",
+        "data": [
+            {
+                "id": 2,
+                "name": "Daihatsu Xenia",
+                "color": "Black",
+                "price": 300000,
+                "speed": 180,
+                "seats": 7,
+                "location": "Jakarta",
+                "rating": 4.5,
+                "is_available": true,
+                "created_at": "2025-06-11T17:00:00.000000Z",
+                "updated_at": "2025-06-11T17:00:00.000000Z"
+            }
+        ]
+    }
+    ```
+-   **Response Gagal (404):**
+    ```json
+    {
+        "message": "No cars found in this location"
+    }
+    ```
+
 ### 🧾 Bookings
 
 #### Get User Booking
@@ -141,7 +181,7 @@ Mengambil data booking berdasarkan ID booking dan (opsional) nomor telepon user.
             "updated_at": "2025-06-11T17:00:00.000000Z",
             "car": {
                 "id": 5,
-                "name": "Toyota Avanza G",
+                "name": "Toyota Avanza G"
                 // ...data mobil lainnya...
             }
         }
@@ -217,7 +257,7 @@ Mengubah detail pesanan yang sudah ada. Semua field opsional.
         "message": "Booking updated successfully",
         "data": {
             "id": "MBX1Y2Z3A4",
-            "car_id": 5,
+            "car_id": 2,
             "duration_days": 5,
             "booking_date": "2025-06-16",
             "user_name": "Salman",
@@ -232,6 +272,12 @@ Mengubah detail pesanan yang sudah ada. Semua field opsional.
     ```json
     {
         "message": "Booking not found"
+    }
+    ```
+-   **Response Gagal (400):**
+    ```json
+    {
+        "message": "Selected car is not available for booking"
     }
     ```
 

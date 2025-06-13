@@ -5,7 +5,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
-    Route::get('/cars/popular', [BookingController::class, 'getPopularCars']);
+    Route::prefix('cars')->group(function () {
+        Route::get('/popular', [BookingController::class, 'getPopularCars']);
+        Route::post('/search', [BookingController::class, 'searchCarsByLocation']);
+    });
 
     Route::prefix('bookings')->group(function () {
         Route::post('/user', [BookingController::class, 'getUserBookings']);

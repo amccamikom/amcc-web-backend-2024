@@ -25,6 +25,31 @@ class BookingController extends Controller
     }
 
     /**
+     * Search for cars by location.
+     */
+    public function searchCarsByLocation(Request $request)
+    {
+        $validated = $request->validate([
+            'location' => 'required|string|max:255',
+        ]);
+
+        $location = $validated['location'];
+        $cars = Car::where('is_available', '=', true)
+            ->where('location', 'LIKE', "%{$location}%")
+            ->latest()
+            ->get();
+
+        if ($cars->isEmpty()) {
+            return response()->json(['message' => 'No cars found in this location'], 404);
+        }
+
+        return response()->json([
+            'message' => 'Cars retrieved successfully',
+            'data' => $cars,
+        ], 200);
+    }
+
+    /**
      * Get a list of all bookings.
      */
     public function getUserBookings(Request $request)
@@ -106,8 +131,24 @@ class BookingController extends Controller
             return response()->json(['message' => 'Booking not found'], 404);
         }
 
+        // Handle car availability if car_id is being updated
+        if (isset($validated['car_id']) && $validated['car_id'] != $booking->car_id) {
+            // Set previous car as available
+            $oldCar = Car::find($booking->car_id);
+            if ($oldCar) {
+                $oldCar->update(['is_available' => true]);
+            }
+
+            // Set new car as unavailable
+            $newCar = Car::find($validated['car_id']);
+            if ($newCar && $newCar->is_available) {
+                $newCar->update(['is_available' => false]);
+            } else if ($newCar && !$newCar->is_available) {
+                return response()->json(['message' => 'Selected car is not available for booking'], 400);
+            }
+        }
+
         $booking->update($validated);
-        $booking->refresh();
 
         return response()->json([
             'message' => 'Booking updated successfully',
