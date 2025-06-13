@@ -4,16 +4,16 @@ Ini adalah repository untuk backend API Sistem Rental Mobil. Dibuat menggunakan 
 
 ## ✨ Fitur Utama
 
--   Menampilkan daftar mobil populer yang tersedia.
--   Membuat pesanan/booking mobil baru dengan ID unik (contoh: `MB-XXXXXXXXXX`).
--   Melihat riwayat pesanan berdasarkan email user.
--   Mengubah dan membatalkan pesanan.
--   Update status ketersediaan mobil secara otomatis saat mobil dipesan atau pesanan dibatalkan.
+- Menampilkan daftar mobil populer yang tersedia.
+- Membuat pesanan/booking mobil baru dengan ID unik (contoh: `MB-XXXXXXXXXX`).
+- Melihat riwayat pesanan berdasarkan email user.
+- Mengubah dan membatalkan pesanan.
+- Update status ketersediaan mobil secara otomatis saat mobil dipesan atau pesanan dibatalkan.
 
 ## 🛠️ Teknologi yang Digunakan
 
--   **Backend:** Laravel 12
--   **Database:** MySQL
+- **Backend:** Laravel 12
+- **Database:** MySQL
 
 ## 🚀 Panduan Setup Awal
 
@@ -21,15 +21,16 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokalm
 
 ### Prasyarat
 
--   PHP 8.2 atau lebih baru
--   Composer
--   Database MySQL
--   Git
--   Postman (Opsional)
+- PHP 8.2 atau lebih baru
+- Composer
+- Database MySQL
+- Git
+- Postman (Opsional)
 
 ### Langkah-langkah Instalasi
 
 1.  **Clone repository ini:**
+
     ```bash
     git clone https://github.com/amccamikom/amcc-web-backend-2024.git
     cd amcc-web-backend-2024
@@ -37,22 +38,26 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokalm
     ```
 
 2.  **Install dependensi PHP via Composer:**
+
     ```bash
     composer install
     ```
 
 3.  **Salin file environment:**
+
     ```bash
     cp .env.example .env
     ```
 
 4.  **Generate application key:**
+
     ```bash
     php artisan key:generate
     ```
 
 5.  **Konfigurasi database:**
     Buka file `.env` dan sesuaikan pengaturan database sesuai dengan konfigurasimu.
+
     ```env
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -64,6 +69,7 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokalm
 
 6.  **Jalankan migrasi dan seeder:**
     Perintah ini akan membuat semua tabel yang dibutuhkan dan mengisinya dengan data awal (dummy data) yang sudah kita siapkan.
+
     ```bash
     php artisan migrate:fresh --seed
     ```
@@ -77,7 +83,7 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan lokalm
 ## 📚 Dokumentasi API Endpoint
 
 Semua endpoint di bawah ini memiliki prefix `/api/v1`.
-**Base URL:** `http://127.0.0.1:8000/api/v1`
+**Base URL (Saat Development):** `http://127.0.0.1:8000/api/v1`
 
 ### 🚗 Cars
 
@@ -85,9 +91,9 @@ Semua endpoint di bawah ini memiliki prefix `/api/v1`.
 
 Mengambil daftar mobil populer yang tersedia untuk disewa (diurutkan berdasarkan rating tertinggi).
 
--   **Method:** `GET`
--   **Endpoint:** `/cars/popular`
--   **Response Sukses (200):**
+- **Method:** `GET`
+- **Endpoint:** `/cars/popular`
+- **Response Sukses (200):**
     ```json
     {
         "message": "Popular cars retrieved successfully",
@@ -109,51 +115,19 @@ Mengambil daftar mobil populer yang tersedia untuk disewa (diurutkan berdasarkan
     }
     ```
 
-#### Get Single Car
-
-Mengambil data mobil berdasarkan id.
-
--   **Method:** `POST`
--   **Endpoint:** `/cars/`
--   **Request Body:**
-    ```json
-    {
-        "id": "1"
-    }
-    ```
--   **Response Sukses (200):**
-    ```json
-    {
-        "message": "Car data retrieved successfully",
-        "data": {
-                "id": 1,
-                "name": "Toyota Avanza G",
-                "color": "Silver",
-                "price": 350000,
-                "speed": 200,
-                "seats": 7,
-                "location": "Jakarta",
-                "rating": 4.8,
-                "is_available": true,
-                "created_at": "2025-06-11T17:00:00.000000Z",
-                "updated_at": "2025-06-11T17:00:00.000000Z"
-            }
-    }
-    ```
-
 #### Search Cars by Location
 
 Mencari mobil yang tersedia berdasarkan lokasi.
 
--   **Method:** `POST`
--   **Endpoint:** `/cars/search`
--   **Request Body:**
+- **Method:** `POST`
+- **Endpoint:** `/cars/search`
+- **Request Body:**
     ```json
     {
         "location": "Jakarta"
     }
     ```
--   **Response Sukses (200):**
+- **Response Sukses (200):**
     ```json
     {
         "message": "Cars retrieved successfully",
@@ -174,31 +148,69 @@ Mencari mobil yang tersedia berdasarkan lokasi.
         ]
     }
     ```
--   **Response Gagal (404):**
+- **Response Gagal (404):**
     ```json
     {
         "message": "No cars found in this location"
     }
     ```
 
-### 🧾 Bookings
+#### Get Car by ID
 
-### Get All User Booking
-Mengambil semua data booking berdasarkan nomor telepon user
+Mendapatkan detail mobil berdasarkan ID.
 
--   **Method:** `POST`
--   **Endpoint:** `/bookings/all`
--   **Request Body:**
+- **Method:** `POST`
+- **Endpoint:** `/cars`
+- **Request Body:**
     ```json
     {
-        "user_phone": "081234567890" // opsional
+        "id": 1
     }
     ```
-    -  `user_phone` wajib.
--   **Response Sukses (200):**
+- **Response Sukses (200):**
     ```json
     {
-        "message": "User booking retrieved successfully",
+        "message": "Car data retrieved successfully",
+        "data": {
+            "id": 1,
+            "name": "Toyota Avanza G",
+            "color": "Silver",
+            "price": 350000,
+            "speed": 200,
+            "seats": 7,
+            "location": "Jakarta",
+            "rating": 4.8,
+            "is_available": true,
+            "created_at": "2025-06-11T17:00:00.000000Z",
+            "updated_at": "2025-06-11T17:00:00.000000Z"
+        }
+    }
+    ```
+- **Response Gagal (404):**
+    ```json
+    {
+        "message": "Car not found"
+    }
+    ```
+
+### 🧾 Bookings
+
+#### Get All User Bookings
+
+Mendapatkan semua riwayat pesanan seorang pengguna berdasarkan nomor telepon.
+
+- **Method:** `POST`
+- **Endpoint:** `/bookings/all`
+- **Request Body:**
+    ```json
+    {
+        "user_phone": "081234567890"
+    }
+    ```
+- **Response Sukses (200):**
+    ```json
+    {
+        "message": "User bookings retrieved successfully",
         "data": [
             {
                 "id": "MBX1Y2Z3A4",
@@ -215,36 +227,31 @@ Mengambil semua data booking berdasarkan nomor telepon user
                     "name": "Toyota Avanza G"
                     // ...data mobil lainnya...
                 }
-            },
-            {
-                // ... data lainnya ...
-            },
-            // ... data lainnya ...
+            }
         ]
     }
     ```
--   **Response Gagal (404):**
+- **Response Gagal (404):**
     ```json
     {
         "message": "No bookings found for this user"
     }
     ```
 
-#### Get User Booking
+#### Get Single Booking
 
-Mengambil data booking berdasarkan ID booking dan (opsional) nomor telepon user.
+Mengambil data satu booking berdasarkan ID booking dan (opsional) nomor telepon user.
 
--   **Method:** `POST`
--   **Endpoint:** `/bookings/user`
--   **Request Body:**
+- **Method:** `POST`
+- **Endpoint:** `/bookings/user`
+- **Request Body:**
     ```json
     {
         "id": "MBX1Y2Z3A4",
         "user_phone": "081234567890" // opsional
     }
     ```
-    -   `id` wajib, `user_phone` opsional.
--   **Response Sukses (200):**
+- **Response Sukses (200):**
     ```json
     {
         "message": "User booking retrieved successfully",
@@ -266,7 +273,7 @@ Mengambil data booking berdasarkan ID booking dan (opsional) nomor telepon user.
         }
     }
     ```
--   **Response Gagal (404):**
+- **Response Gagal (404):**
     ```json
     {
         "message": "Booking not found"
@@ -277,9 +284,9 @@ Mengambil data booking berdasarkan ID booking dan (opsional) nomor telepon user.
 
 Membuat pesanan mobil baru.
 
--   **Method:** `POST`
--   **Endpoint:** `/bookings`
--   **Request Body:**
+- **Method:** `POST`
+- **Endpoint:** `/bookings`
+- **Request Body:**
     ```json
     {
         "car_id": 1,
@@ -290,7 +297,7 @@ Membuat pesanan mobil baru.
         "user_phone": "081234567890"
     }
     ```
--   **Response Sukses (201):**
+- **Response Sukses (201):**
     ```json
     {
         "message": "Booking created successfully",
@@ -307,7 +314,7 @@ Membuat pesanan mobil baru.
         }
     }
     ```
--   **Response Gagal (400):**
+- **Response Gagal (400):**
     ```json
     {
         "message": "Car is not available for booking"
@@ -318,11 +325,11 @@ Membuat pesanan mobil baru.
 
 Mengubah detail pesanan yang sudah ada. Semua field opsional.
 
--   **Method:** `PUT`
--   **Endpoint:** `/bookings/{id}`
--   **URL Parameter:**
-    -   `{id}`: ID unik dari booking (contoh: `MBX1Y2Z3A4`).
--   **Request Body:**
+- **Method:** `PUT`
+- **Endpoint:** `/bookings/{id}`
+- **URL Parameter:**
+    - `{id}`: ID unik dari booking (contoh: `MBX1Y2Z3A4`).
+- **Request Body:**
     ```json
     {
         "duration_days": 5,
@@ -330,13 +337,13 @@ Mengubah detail pesanan yang sudah ada. Semua field opsional.
         // field lain opsional: car_id, user_name, user_email, user_phone
     }
     ```
--   **Response Sukses (200):**
+- **Response Sukses (200):**
     ```json
     {
         "message": "Booking updated successfully",
         "data": {
             "id": "MBX1Y2Z3A4",
-            "car_id": 2,
+            "car_id": 5,
             "duration_days": 5,
             "booking_date": "2025-06-16",
             "user_name": "Salman",
@@ -347,16 +354,16 @@ Mengubah detail pesanan yang sudah ada. Semua field opsional.
         }
     }
     ```
--   **Response Gagal (404):**
-    ```json
-    {
-        "message": "Booking not found"
-    }
-    ```
--   **Response Gagal (400):**
+- **Response Gagal (400):**
     ```json
     {
         "message": "Selected car is not available for booking"
+    }
+    ```
+- **Response Gagal (404):**
+    ```json
+    {
+        "message": "Booking not found"
     }
     ```
 
@@ -364,17 +371,17 @@ Mengubah detail pesanan yang sudah ada. Semua field opsional.
 
 Menghapus data pesanan. Status mobil terkait akan otomatis menjadi available.
 
--   **Method:** `DELETE`
--   **Endpoint:** `/bookings/{id}`
--   **URL Parameter:**
-    -   `{id}`: ID unik dari booking (contoh: `MBX1Y2Z3A4`).
--   **Response Sukses (200):**
+- **Method:** `DELETE`
+- **Endpoint:** `/bookings/{id}`
+- **URL Parameter:**
+    - `{id}`: ID unik dari booking (contoh: `MBX1Y2Z3A4`).
+- **Response Sukses (200):**
     ```json
     {
         "message": "Booking deleted successfully"
     }
     ```
--   **Response Gagal (404):**
+- **Response Gagal (404):**
     ```json
     {
         "message": "Booking not found"
