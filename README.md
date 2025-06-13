@@ -151,6 +151,53 @@ Mencari mobil yang tersedia berdasarkan lokasi.
 
 ### 🧾 Bookings
 
+### Get All User Booking
+Mengambil semua data booking berdasarkan nomor telepon user
+
+-   **Method:** `POST`
+-   **Endpoint:** `/bookings/all`
+-   **Request Body:**
+    ```json
+    {
+        "user_phone": "081234567890" // opsional
+    }
+    ```
+    -  `user_phone` wajib.
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "User booking retrieved successfully",
+        "data": [
+            {
+                "id": "MBX1Y2Z3A4",
+                "car_id": 5,
+                "duration_days": 3,
+                "booking_date": "2025-06-10",
+                "user_name": "Salman",
+                "user_email": "salman@example.com",
+                "user_phone": "081234567890",
+                "created_at": "2025-06-11T17:00:00.000000Z",
+                "updated_at": "2025-06-11T17:00:00.000000Z",
+                "car": {
+                    "id": 5,
+                    "name": "Toyota Avanza G"
+                    // ...data mobil lainnya...
+                }
+            },
+            {
+                // ... data lainnya ...
+            },
+            // ... data lainnya ...
+        ]
+    }
+    ```
+-   **Response Gagal (404):**
+    ```json
+    {
+        "message": "No bookings found for this user"
+    }
+    ```
+
 #### Get User Booking
 
 Mengambil data booking berdasarkan ID booking dan (opsional) nomor telepon user.

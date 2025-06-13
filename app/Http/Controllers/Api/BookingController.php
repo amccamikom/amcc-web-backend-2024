@@ -50,7 +50,28 @@ class BookingController extends Controller
     }
 
     /**
-     * Get a list of all bookings.
+     * Get a list of all bookings of the user by phone number.
+     */
+    public function getAllBookings() 
+    {
+        $validated = request()->validate([
+            'user_phone' => 'required|string|max:20',
+        ]);
+        $userPhone = $validated['user_phone'] ?? null;
+        $bookings = Booking::with('car')
+            ->where('user_phone', '=', $userPhone)
+            ->get();
+        if ($bookings->isEmpty()) {
+            return response()->json(['message' => 'No bookings found for this user'], 404);
+        }
+        return response()->json([
+            'message' => 'User bookings retrieved successfully',
+            'data' => $bookings,
+        ], 200);
+    }
+
+    /**
+     * Get a user's booking by phone number or booking ID.
      */
     public function getUserBookings(Request $request)
     {
