@@ -8,6 +8,7 @@ Route::prefix('v1')->group(function () {
     Route::prefix('cars')->group(function () {
         Route::get('/popular', [BookingController::class, 'getPopularCars']);
         Route::post('/search', [BookingController::class, 'searchCarsByLocation']);
+        Route::post('/', [BookingController::class, 'getCarById']);
     });
 
     Route::prefix('bookings')->group(function () {

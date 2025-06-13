@@ -25,6 +25,24 @@ class BookingController extends Controller
     }
 
     /**
+     * Get single car by id.
+     */
+    public function getCarById(Request $request) {
+        $validated = $request->validate([
+            'id' => 'required|exists:cars,id',
+        ]);
+        
+        $car = Car::find($validated['id']);
+        if (!$car) {
+            return response()->json(['message' => 'Car not found'], 404);
+        }
+        return response()->json([
+            'message' => 'Car data retrieved successfully',
+            'data' => $car,
+        ], 200);
+    }
+
+    /**
      * Search for cars by location.
      */
     public function searchCarsByLocation(Request $request)

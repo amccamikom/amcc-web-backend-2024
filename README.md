@@ -109,6 +109,38 @@ Mengambil daftar mobil populer yang tersedia untuk disewa (diurutkan berdasarkan
     }
     ```
 
+#### Get Single Car
+
+Mengambil data mobil berdasarkan id.
+
+-   **Method:** `POST`
+-   **Endpoint:** `/cars/`
+-   **Request Body:**
+    ```json
+    {
+        "id": "1"
+    }
+    ```
+-   **Response Sukses (200):**
+    ```json
+    {
+        "message": "Car data retrieved successfully",
+        "data": {
+                "id": 1,
+                "name": "Toyota Avanza G",
+                "color": "Silver",
+                "price": 350000,
+                "speed": 200,
+                "seats": 7,
+                "location": "Jakarta",
+                "rating": 4.8,
+                "is_available": true,
+                "created_at": "2025-06-11T17:00:00.000000Z",
+                "updated_at": "2025-06-11T17:00:00.000000Z"
+            }
+    }
+    ```
+
 #### Search Cars by Location
 
 Mencari mobil yang tersedia berdasarkan lokasi.
