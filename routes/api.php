@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CategoryController;
@@ -24,12 +25,18 @@ Route::middleware(ApiKeyMiddleware::class)->group(function () {
     Route::apiResource('/users', UserController::class);
 });
 
-Route::apiResource('/cars', CarController::class);
-Route::apiResource('/bookings', BookingController::class);
-Route::apiResource('/transactions', TransactionController::class)->only([
-    'index', 'show', 'store',
-]);
+Route::controller(AuthController::class)->group(function() {
+    Route::post('/login', 'login');
+});
 
-Route::middleware(['check.role:admin'])->group(function () {
-    Route::apiResource('categories', CategoryController::class);
+// Route::apiResource('/bookings', BookingController::class);
+// Route::apiResource('/transactions', TransactionController::class)->only([
+//     'index', 'show', 'store',
+// ]);
+
+Route::apiResource('categories', CategoryController::class)->only(['index', 'show']);
+
+Route::middleware(['auth:sanctum', 'check.role:admin'])->group(function () {
+    Route::apiResource('categories', CategoryController::class)->except(['index', 'show']);
+    Route::apiResource('cars', CarController::class)->only(["store"]);
 });

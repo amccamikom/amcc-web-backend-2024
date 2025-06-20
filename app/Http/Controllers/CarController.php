@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -42,31 +44,38 @@ class CarController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name'        => 'required|string|max:255',
-            'price'       => 'required|numeric',
-            'color'       => 'required|string|max:255',
-            'status'      => 'required|in:available,unavailable',
-            'seat'        => 'required|integer',
-            'cc'          => 'required|integer',
-            'top_speed'   => 'required|integer',
-            'description' => 'nullable|string',
-            'location'    => 'required|string',
-            'imageUrl'    => 'nullable|string',
-            'category_id' => 'required|exists:categories,id',
-        ]);
+        try {
+            $validatedData = $request->validate([
+                'name'        => 'required|string|max:255',
+                'price'       => 'required|numeric',
+                'color'       => 'required|string|max:255',
+                'status'      => 'required|in:available,unavailable',
+                'seat'        => 'required|integer',
+                'cc'          => 'required|integer',
+                'top_speed'   => 'required|integer',
+                'description' => 'nullable|string',
+                'location'    => 'required|string',
+                'image'       => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'category_id' => 'required|exists:categories,id',
+            ]);
 
-        // --- Cara Lama (Query Builder) ---
-        // $id = DB::table('cars')->insertGetId([
-        //     ...
-        //     'created_at'   => Carbon::now(),
-        //     'updated_at'   => Carbon::now(),
-        // ]);
-        // return response()->json(['message' => 'Car created', 'id' => $id], 201);
+            // Simpan file dan dapatkan full URL-nya
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('images/cars', 'public');
+                $validatedData['imageUrl'] = asset('storage/' . $path);
+            }
 
-        // --- Cara Baru (Eloquent) ---
-        $car = Car::create($validatedData);
-        return response()->json($car, 201);
+            // Hapus key image agar tidak disimpan ke kolom yang tidak ada
+            unset($validatedData['image']);
+
+            $car = Car::create($validatedData);
+
+            return response()->json($car, 201);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 
     public function update(Request $request, $id)

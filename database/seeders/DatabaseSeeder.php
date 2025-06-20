@@ -5,7 +5,6 @@ namespace Database\Seeders;
 
 use App\Models\Booking;
 use App\Models\Car;
-use App\Models\Category;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -17,19 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     { 
-        // 1. Category Seeder
-        Category::factory(5)->create();
-
-        // 2. User Seeder
-        User::factory()->create([
-            'role' => 'admin',
-            'email' => 'admin@example.com'
+        // 1. Seeders
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class
         ]);
 
-        User::factory(3)->create([
-            'role' => 'customer'
-        ]);
-
+        // 2. Random User Seeder
+        User::factory(3)->create();
 
         // 3. Car Seeder
         Car::factory(10)->create();

@@ -8,42 +8,67 @@ use App\Http\Requests\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
-    // Menampilkan semua kategori
-    public function index()
-    {
-        return response()->json(Category::all());
-    }
 
-    // Menyimpan kategori baru
-    public function store(StoreCategoryRequest $request)
-    {
-        $validated = $request->validated();  // Validasi menggunakan StoreCategoryRequest
-        $category = Category::create($validated);
+  public function index()
+  {
+    $categories = Category::all();
 
-        return response()->json([
-            'message' => 'Kategori berhasil disimpan',
-            'data' => $category
-        ], 201);
-    }
+    return response()->json([
+      'message' => 'success',
+      'data' => $categories
+    ]);
+  }
 
-    // Menampilkan detail kategori berdasarkan ID
-    public function show($id)
-    {
-        return response()->json(Category::findOrFail($id));
-    }
+  public function store(StoreCategoryRequest $request)
+  {
+    $validated = $request->validated();
+    $category = Category::create($validated);
 
-    // Memperbarui data kategori
-    public function update(Request $request, $id)
-    {
-        $category = Category::findOrFail($id);
-        $category->update($request->all());
-        return response()->json(['message' => 'Kategori berhasil diperbarui', 'data' => $category]);
-    }
+    return response()->json([
+      'message' => 'Successfull create category',
+      'data' => $category
+    ], 201);
+  }
 
-    // Menghapus data kategori
-    public function destroy($id)
-    {
-        Category::findOrFail($id)->delete();
-        return response()->json(['message' => 'Kategori berhasil dihapus']);
+  public function show($id)
+  {
+    try {
+      return response()->json(Category::findOrFail($id));
+    } catch (\Exception $e) {
+      return response()->json([
+        'message' => 'Category not found'
+      ], 404);
     }
+  }
+
+  public function update(Request $request, $id)
+  {
+    try {
+      $category = Category::findOrFail($id);
+
+      $category->update($request->all());
+
+      return response()->json([
+        'message' => 'Successfull update category',
+        'data' => $category]
+      );
+    } catch (\Exception $e) {
+      return response()->json([
+        'message' => 'Category not found'
+      ], 404);
+    }
+  }
+
+  public function destroy($id)
+  {
+    try {
+      Category::findOrFail($id)->delete();
+
+      return response()->json(['message' => 'Successfull remove category']);
+    } catch (\Exception $e) {
+      return response()->json([
+        'message' => 'Category not found'
+      ], 404);
+    }
+  }
 }
